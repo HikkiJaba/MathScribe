@@ -1,0 +1,222 @@
+.sidebar {
+    width: 250px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 11px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.sidebar.hidden {
+    margin-left: -250px;
+}
+
+/* Секция хедера сайдбара */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    user-select: none;
+}
+
+/* Контейнер настроек */
+.settings-container {
+    position: relative;
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: 
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.settings-btn:hover {
+    color: var(--text-primary);
+    transform: rotate(45deg);
+}
+
+/* Выпадающее меню настроек */
+.settings-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    z-index: 10;
+    min-width: 180px;
+    overflow: hidden;
+}
+
+.settings-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.settings-dropdown li {
+    padding: 10px 16px;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: 
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.settings-dropdown li:hover {
+    background-color: var(--hover-bg);
+    color: var(--accent-color);
+}
+
+/* Секция заголовка слоев */
+.layers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.layers-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+/* Кнопка добавления слоя */
+.add-layer-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.add-layer-btn:hover {
+    color: var(--accent-color-hover);
+    transform: scale(1.1);
+}
+
+.add-layer-btn:disabled {
+    color: var(--text-secondary);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Контейнер слоев */
+.layers {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Стили для скроллбара */
+.layers::-webkit-scrollbar {
+    width: 6px;
+}
+
+.layers::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+.layers::-webkit-scrollbar-thumb {
+    background-color: var(--text-secondary);
+    border-radius: 3px;
+}
+
+/* Стили слоя */
+.layer {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: 
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.layer.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.layer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.layer-content:hover {
+    background-color: var(--accent-color-hover);
+}
+
+.layer-content span {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Действия со слоями */
+.layer-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.layer-actions svg {
+    color: var(--text-secondary);
+    transition: 
+        color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.layer-actions svg:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+/* Переименование слоя */
+.layer-rename {
+    margin: 4px 0;
+}
+
+.layer-rename input {
+    width: 100%;
+    padding: 6px 8px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+    transition: 
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.layer-rename input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.user-circle {
+    display: none
+}

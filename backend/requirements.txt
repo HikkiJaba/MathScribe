@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+Flask-JWT-Extended
+Flask-Bcrypt
+Flask-Cors
+sympy
+numpy
+scipy
+matplotlib
+json5
+fastapi
+uvicorn
